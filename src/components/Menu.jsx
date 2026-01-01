@@ -11,6 +11,18 @@ const Menu = () => {
 
 
   useGSAP(()=>{
+   gsap.timeline({
+      scrollTrigger:{
+        trigger: '#menu',
+        start:'top 20%',
+        end:'bottom top',
+        scrub: true,
+      }
+    })
+     .to('#m-right-leaf',{y:200},0)
+     .to('#m-left-leaf',{y:-200},0)
+   
+
     gsap.fromTo('#title',{opacity:0}, {opacity:1, duration:1},);
     gsap.fromTo('.cocktail img',{opacity:0, xPercent: -100},{
       xPercent:0, opacity:1, duration:1, ease:'power1.inOut'
